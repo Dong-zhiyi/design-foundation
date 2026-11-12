@@ -31,7 +31,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/design-foundation.git
+git clone https://github.com/Dong-zhiyi/design-foundation.git
 
 # 在 ZCode 插件市场 → 添加 → 添加插件市场，选择仓库根目录
 ```
@@ -56,7 +56,7 @@ git clone https://github.com/YOUR_USERNAME/design-foundation.git
 
 字体样张页是一个**独立的静态项目**，需要用户自行部署：
 
-- 项目地址：[zcode-design-foundation-font-preview](https://github.com/YOUR_USERNAME/zcode-design-foundation-font-preview)（独立仓库）
+- 项目地址：[zcode-design-foundation-font-preview](https://github.com/Dong-zhiyi/zcode-design-foundation-font-preview)（独立仓库）
 - 部署：上传到任意静态服务器，`index.html` 与 `fonts/` 必须同级
 - 配置：在插件设置里填 `font_preview_url` 为部署后的地址
 
@@ -119,4 +119,4 @@ MIT License — 详见 [LICENSE](LICENSE)
 
 ## 🔗 相关项目
 
-- [zcode-design-foundation-font-preview](https://github.com/YOUR_USERNAME/zcode-design-foundation-font-preview) — 字体样张页（独立静态项目）
+- [zcode-design-foundation-font-preview](https://github.com/Dong-zhiyi/zcode-design-foundation-font-preview) — 字体样张页（独立静态项目）

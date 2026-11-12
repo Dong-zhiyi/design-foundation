@@ -25,7 +25,7 @@ design-foundation/
         └── figma-delivery/        # Naming / structure / variables / delivery / reuse-first / variants / reference extraction / verification loop
 ```
 
-> The font preview page is **not included in this plugin** — it's a separate static project (`index.html` + `fonts/`), deployed independently. See the [font preview project](https://github.com/YOUR_USERNAME/zcode-design-foundation-font-preview) for details.
+> The font preview page is **not included in this plugin** — it's a separate static project (`index.html` + `fonts/`), deployed independently. See the [font preview project](https://github.com/Dong-zhiyi/zcode-design-foundation-font-preview) for details.
 
 ## Install
 
@@ -55,7 +55,7 @@ Generate token: Figma → Settings → Security → Personal access tokens
 
 The font preview page is a **separate static project** — not bundled with this plugin. Users deploy it to any static server and configure the URL in `font_preview_url`.
 
-- Project: [zcode-design-foundation-font-preview](https://github.com/YOUR_USERNAME/zcode-design-foundation-font-preview) (`index.html` + `fonts/`, ~62MB)
+- Project: [zcode-design-foundation-font-preview](https://github.com/Dong-zhiyi/zcode-design-foundation-font-preview) (`index.html` + `fonts/`, ~62MB)
 - Must be served over http(s): browsers block `file://` pages from loading local fonts (including same-directory fonts)
 - For local preview: `python -m http.server 8731` in the project directory
 
