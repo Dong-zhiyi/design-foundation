@@ -1,0 +1,34 @@
+{
+  "name": "design-foundation",
+  "version": "0.4.0",
+  "description": "产品设计基座工作流：先定平台与技术栈，再选风格、架构、字体库与图标库，产出设计规范简报并过质量门禁，验证 Figma MCP 连通性后落地设计稿；落地后走截图自检闭环（独立裁判打分 → 修 → 再截）。自带 figwright-mcp 与 framelink-mcp 两个 Figma MCP。",
+  "author": { "name": "zcode-design-foundation contributors" },
+  "skills": "./skills",
+  "mcpServers": {
+    "figwright-mcp": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@figwright/mcp@0.7.0"]
+    },
+    "framelink-mcp": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "figma-developer-mcp", "--stdio"],
+      "env": {
+        "FIGMA_API_KEY": "${user_config.figma_token}"
+      }
+    }
+  },
+  "userConfig": {
+    "figma_token": {
+      "type": "string",
+      "title": "Figma Access Token",
+      "description": "Figma Personal Access Token（figd_ 开头）。生成：Figma → Settings → Security → Personal access tokens。填入后插件内的 framelink-mcp 才能读取你的 Figma 文件；figwright-mcp 不需要 token，但需要 Figma 桌面端运行 Figwright 插件。",
+      "default": ""
+    },
+    "font_preview_url": {
+      "type": "string",
+      "title": "字体样张页地址",
+      "description": "字体样张页部署后的访问地址，用于让用户在浏览器里看 13 个候选字体的真实效果。\n示例：https://your-domain.com/zcode-design-foundation-font-preview/\n\n样张页是一个独立的静态项目（index.html + fonts/ 放在同一目录），上传到任意静态服务器即可，详见项目里的 zcode-design-foundation-font-preview/README.md。\n留空则不展示样张入口。",
+      "default": "https://your-domain.com/zcode-design-foundation-font-preview/"
+    }
+  }
+}

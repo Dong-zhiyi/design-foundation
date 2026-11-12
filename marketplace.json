@@ -1,0 +1,18 @@
+{
+  "name": "design-foundation-marketplace",
+  "plugins": [
+    {
+      "name": "design-foundation",
+      "source": "./design-foundation",
+      "version": "0.4.0",
+      "description": "产品设计基座工作流：先定平台与技术栈，再选风格、架构、字体库与图标库，产出设计规范简报并过质量门禁，验证 Figma MCP 连通性后落地设计稿；落地后走截图自检闭环（独立裁判打分 → 修 → 再截）。自带 figwright-mcp 与 framelink-mcp 两个 Figma MCP。",
+      "displayName": "Design Foundation 设计基座",
+      "displayName_i18n": {
+        "zh-CN": "设计基座"
+      },
+      "description_i18n": {
+        "zh-CN": "产品设计基座工作流：定平台与技术栈，选风格/架构/字体/图标，过质量门禁后落地 Figma 设计稿。"
+      }
+    }
+  ]
+}
