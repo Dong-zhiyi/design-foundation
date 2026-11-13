@@ -156,6 +156,128 @@
 
 ---
 
+## 六.5、原生组件与 API 清单
+
+> 来源：
+> - [uni-app 组件文档](https://uniapp.dcloud.net.cn/component/)
+> - [uni-app x 组件文档](https://doc.dcloud.net.cn/uni-app-x/component/)
+> - [uni-app API 文档](https://uniapp.dcloud.net.cn/api/)
+> - [uni-app x 概述](https://doc.dcloud.net.cn/uni-app-x/)
+
+设计时要知道框架**自带哪些原生组件**，避免设计了实现不了的效果，也避免重复造轮子。
+
+### 经典 uni-app 原生组件
+
+**视图容器**
+| 组件 | 说明 |
+|---|---|
+| `view` | 视图容器，类似 div |
+| `scroll-view` | 可滚动视图容器 |
+| `swiper` | 滑块视图容器（轮播 banner） |
+| `match-media` | 屏幕动态适配 |
+| `movable-area` | 可拖动区域 |
+| `movable-view` | 可移动视图（必须在 movable-area 内） |
+| `cover-view` | 覆盖在原生组件上的文本 |
+| `cover-image` | 覆盖在原生组件上的图片 |
+
+**基础内容**
+| 组件 | 说明 |
+|---|---|
+| `icon` | 图标 |
+| `text` | 文字 |
+| `rich-text` | 富文本 |
+| `progress` | 进度条 |
+
+**表单组件**
+| 组件 | 说明 |
+|---|---|
+| `button` | 按钮 |
+| `checkbox` | 多项选择器 |
+| `editor` | 富文本输入框 |
+| `form` | 表单 |
+| `input` | 输入框 |
+| `label` | 标签 |
+| `picker` | 弹出式列表选择器 |
+| `picker-view` | 窗体内嵌式列表选择器 |
+| `radio` | 单项选择器 |
+| `slider` | 滑动选择器 |
+| `switch` | 开关选择器 |
+| `textarea` | 多行文本输入框 |
+
+**导航**
+| 组件 | 说明 |
+|---|---|
+| `navigator` | 页面链接，类似 a 标签 |
+
+**媒体组件**
+| 组件 | 说明 |
+|---|---|
+| `audio` | 音频 |
+| `camera` | 相机 |
+| `image` | 图片 |
+| `video` | 视频 |
+| `live-player` | 直播播放 |
+| `live-pusher` | 直播推流 |
+
+**其他**
+| 组件 | 说明 |
+|---|---|
+| `map` | 地图 |
+| `canvas` | 画布 |
+| `web-view` | 内嵌网页 |
+| `ad` / `ad-draw` | 广告组件 |
+| `custom-tab-bar` | 自定义底部 TabBar |
+| `navigation-bar` | 页面顶部导航 |
+| `page-meta` | 页面属性配置 |
+| `unicloud-db` | uniCloud 数据库组件 |
+
+### uni-app x 原生组件（新增/差异）
+
+uni-app x 在经典版基础上**新增**了以下组件：
+
+| 组件 | 说明 | 备注 |
+|---|---|---|
+| `glass-effect-view` | 玻璃效果视图容器 | **新增**，毛玻璃背景 |
+| `list-view` | 列表容器 | **新增**，高性能长列表 |
+| `waterflow` | 瀑布流容器 | **新增** |
+| `nested-scroll` | 嵌套滚动 | **新增** |
+| `sticky` | 粘性布局组件 | **新增**，吸顶效果 |
+| `page-container` | 弹层容器 | **新增** |
+| `share-element` | 共享元素视图容器 | **新增**，转场动画 |
+| `movable` | 可拖动组件 | 替代 classic 的 movable-area + movable-view |
+| `cover` | 覆盖组件 | 替代 classic 的 cover-view/cover-image |
+
+**uni-app x 移除/不支持**：
+- ❌ 不支持小程序 WXML 组件（微信小程序除外）
+- ❌ 不支持 `plus` API 和 `weex` API
+- ❌ nvue 不支持百分比单位
+
+**uni-app x 特有**：
+- ✅ 支持 DOM API（App 端）
+- ✅ 支持 `uvue` 自定义组件（前端）和 `uts` 原生插件（native）
+- ✅ Steam Mode 渲染引擎（官方称快于原生）
+
+### 原生 API 分类（经典 uni-app 与 uni-app x 通用）
+
+| 分类 | 主要 API |
+|---|---|
+| **基础** | `uni.base64ToArrayBuffer`、`uni.getLaunchOptionsSync`、`canIUse` |
+| **网络** | `uni.request`、`uni.uploadFile`、`uni.downloadFile`、`uni.connectSocket` |
+| **路由** | `uni.navigateTo`、`uni.redirectTo`、`uni.reLaunch`、`uni.switchTab`、`uni.navigateBack` |
+| **数据缓存** | `uni.getStorage`、`uni.setStorage`、`uni.removeStorage`、`uni.clearStorage` |
+| **位置** | `uni.getLocation`、`uni.chooseLocation`、`uni.openLocation` |
+| **媒体** | `uni.chooseImage`、`uni.previewImage`、`uni.chooseVideo`、`uni.chooseMedia`、`uni.getRecorderManager` |
+| **设备** | `uni.getSystemInfo`、`uni.getNetworkType`、`uni.scanCode`、`uni.setClipboardData`、`uni.vibrateShort` |
+| **界面** | `uni.showToast`、`uni.showLoading`、`uni.showModal`、`uni.showActionSheet`、`uni.setNavigationBarTitle`、`uni.setTabBarBadge` |
+| **文件** | `uni.saveFile`、`uni.openDocument`、`uni.getFileSystemManager` |
+| **画布** | `uni.createCanvasContext`、`uni.canvasToTempFilePath` |
+| **第三方服务** | `uni.login`、`uni.getUserInfo`、`uni.share`、`uni.requestPayment` |
+| **其他** | `uni.authorize`、`uni.openSetting`、`uni.chooseAddress`、`uni.navigateToMiniProgram` |
+
+> ⚠️ **设计影响**：知道框架有什么原生组件，设计时就可以**直接映射**——比如需要轮播就用 `swiper`，需要长列表就用 `list-view`（x）或 `scroll-view`（经典），需要吸顶就用 `sticky`（x）或自己实现（经典）。
+
+---
+
 ## 七、设计交付要点
 
 - **说清是 uni-app x 还是经典版**
