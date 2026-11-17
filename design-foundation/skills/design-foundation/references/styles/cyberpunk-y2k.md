@@ -97,3 +97,9 @@
 
 - 来源：`cumabozkurt/god-of-design`、`luogao/design-atlas`
 - 相关：Modern Dark、Terminal TUI、Retro OS
+
+---
+
+## 生成指令摘要
+
+> 背景 `#0A0014`（深空），卡片 `#1A0B2E` 半透明。**霓虹发光**是核心：描边 `#FF2E88`（粉）/ `#00F0FF`（青）带 `box-shadow: 0 0 20px` 发光。强调色酸性绿 `#CCFF00` / 紫 `#B14EFF`。标题用几何未来体（Orbitron / Michroma 32–64px Bold）或像素体。圆角小（0–8px）。不对称、倾斜、层叠布局，可加扫描线/噪点/故障效果。⚠️ 正文保证可读性，闪烁必须提供 `prefers-reduced-motion` 降级。

@@ -103,3 +103,9 @@ box-shadow:
 
 - 来源：`yanliudesign/design-style-skill`、`MKAbuMattar/uidesign`
 - 相关：Neumorphism、Bento Grid
+
+---
+
+## 生成指令摘要
+
+> 背景 `#F0F4FF`（浅蓝紫）或 `#FFF5F7`，卡片白底。**圆角极大（24–32px）**，**双层阴影**（外柔和扩散 + 内高光/暗边模拟体积），不用描边。主色柔和（紫 `#A78BFA` / 粉 `#F9A8D4`）。用圆体字（Nunito / Quicksand），字重偏轻。元素大、圆、稀疏，间距 24/32/48，信息密度低。按钮 52–56px 高、圆角 20–24px。配 3D 圆润插画。

@@ -96,3 +96,9 @@
 
 - 来源：`yanliudesign/design-style-skill`、`cumabozkurt/god-of-design`
 - 相关：Bauhaus（结构感）、Memphis Design
+
+---
+
+## 生成指令摘要
+
+> 背景 `#FFF8E7`（米黄）或 `#FFFFFF`，卡片白底。**直角（0 圆角）**，**2–4px 纯黑描边**，**硬阴影 `4px 4px 0 #000`（无模糊）**。高饱和色块（粉 `#FF5D8F` / 黄 `#FFE14D` / 蓝 `#4D96FF`）大面积使用。标题极大极粗（40–72px Black），正文 14–16px。故意打破栅格、不对称布局。间距大胆（32/64/96），信息密度低。装饰用星形、闪电、波浪线。

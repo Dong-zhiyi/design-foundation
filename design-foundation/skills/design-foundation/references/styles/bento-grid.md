@@ -98,3 +98,9 @@
 
 - 来源：`nicohodt/claude-code-ui-ux-skill`、`yanliudesign/design-style-skill`
 - 相关：iOS 26 的 Bento 宣传、Dashboard 设计
+
+---
+
+## 生成指令摘要
+
+> 深色版：背景 `#0A0A0A`，格子 `#1C1C1E`，描边 `#2A2A32` 1px，文字 `#FFFFFF`/`#8A8A96`。浅色版：背景 `#F5F5F7`，格子 `#FFFFFF`，文字 `#111111`/`#6B7280`。**圆角大（20–28px）**，格子间距 12–16px。网格不等大（1×1、2×1、2×2 混合），每格一个主题一个焦点。数据/数字可特别大（24–40px Bold）。响应式：大屏 4 列 → 中屏 2 列 → 小屏 1 列，要重排不是简单堆叠。

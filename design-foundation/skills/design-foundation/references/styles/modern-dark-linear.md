@@ -99,3 +99,9 @@
 
 - 来源：`ddddddps/claude-ui-style-skill`、`nicohodt/claude-code-ui-ux-skill`
 - 类似风格：Dark Tech、AI-Native UI（`luogao/design-atlas`）
+
+---
+
+## 生成指令摘要
+
+> 背景 `#0D0D0F`，卡片 `#16161A`，浮层 `#1E1E24`，描边 `#2A2A32` 1px。主色 `#5E6AD2`（或 `#22C55E`）仅用于主要操作和选中态，全界面只有一个高亮色。文字 `#E8E8EC`（主）/ `#8A8A96`（次），不用纯白。圆角统一 6–8px，不用阴影，用描边和色差分层。字号偏小（正文 13–14px），靠字重和颜色区分层级。间距 4/8/12/16/24，信息密度高，严格左对齐。

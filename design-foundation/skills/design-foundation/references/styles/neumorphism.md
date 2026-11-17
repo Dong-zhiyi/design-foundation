@@ -108,3 +108,9 @@ box-shadow: inset 6px 6px 12px #B8BEC9, inset -6px -6px 12px #FFFFFF;
 
 - 来源：`MKAbuMattar/uidesign`、`yanliudesign/design-style-skill`
 - 相关：Claymorphism（更立体）、Glassmorphism（更通透）
+
+---
+
+## 生成指令摘要
+
+> 背景**唯一色** `#E0E5EC`，所有元素同色系，**不用颜色区分层级，只用阴影**。凸起元素：双阴影（亮 `#FFFFFF` 左上 + 暗 `#B8BEC9` 右下）；凹陷元素（输入框）：反向 inset 阴影。圆角大（16–24px），不用描边。文字 `#3A4356`（主）/ `#8A94A8`（次，仅大字号），强调 `#6C8CFF`。⚠️ 次要文字对比度仅 2.8:1，正文必须加深到 ≥4.5:1。按钮按下变凹陷（inset）。

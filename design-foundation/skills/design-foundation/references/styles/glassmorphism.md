@@ -95,3 +95,9 @@
 
 - 来源：`MKAbuMattar/uidesign`、`yanliudesign/design-style-skill`
 - 相关：Liquid Glass（iOS 26）、AI Native UI
+
+---
+
+## 生成指令摘要
+
+> **背景必须有内容**（渐变 `#667EEA→#764BA2` 或彩色图片），否则模糊无意义。玻璃面 `rgba(255,255,255,0.12)` 填充 + `backdrop-filter: blur(20px)` + 1px 半透明白描边 `rgba(255,255,255,0.3)`。文字白色，次要文字 `rgba(255,255,255,0.7)`。⚠️ 文字下必须加半透明暗色衬底或文字阴影保证可读性。圆角大（16–24px），轻阴影 `0 8px 32px rgba(0,0,0,0.12)`。强调色 `#A78BFA` / `#38BDF8` 点缀。❌ 不在白底上用、不多层叠加、模糊不超 30px。

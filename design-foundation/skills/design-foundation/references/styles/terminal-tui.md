@@ -99,3 +99,9 @@
 
 - 来源：`luogao/design-atlas`、`nicohodt/claude-code-ui-ux-skill`
 - 相关：Modern Dark / Linear、Cyberpunk
+
+---
+
+## 生成指令摘要
+
+> 背景 `#0D1117`，面板 `#161B22`，描边 `#30363D` 1px。**全站等宽字体**（JetBrains Mono / IBM Plex Mono 12–14px），这是核心特征。文字 `#C9D1D9`（主）/ `#8B949E`（次）。状态色：绿 `#3FB950`、黄 `#D29922`、红 `#F85149`、蓝 `#58A6FF`。圆角 0–4px，无阴影，用 ASCII 字符边框可选。信息密度极高，表格行高 28–32px，分栏布局（侧边树 + 主内容 + 底部状态栏 24px）。
