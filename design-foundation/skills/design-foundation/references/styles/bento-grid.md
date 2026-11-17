@@ -94,10 +94,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | ease |
+| 过渡时长 | 中（200ms） |
+| hover 效果 | 格子轻微上浮（translateY -2px）+ 阴影微增 |
+| 页面切换 | 淡入 + 轻微缩放（0.98 → 1.0） |
+| 加载动画 | 骨架屏（格子轮廓脉动） |
+| 特殊动效 | 数据更新时数字滚动（count-up），趋势箭头动画 |
+
+**要点**：动效服务于模块化节奏，每个格子独立响应，不联动。
+
+---
+
 ## 参考
 
 - 来源：`nicohodt/claude-code-ui-ux-skill`、`yanliudesign/design-style-skill`
-- 相关：iOS 26 的 Bento 宣传、Dashboard 设计
+- 相关：iOS 26 Bento 宣传、Dashboard 设计、[AI Native UI](./ai-native-ui.md)
 
 ---
 

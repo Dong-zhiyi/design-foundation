@@ -97,10 +97,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | ease-in-out |
+| 过渡时长 | 中（300ms） |
+| hover 效果 | 金色微亮（`#C9A227` → `#D4AF37`），不用位移 |
+| 页面切换 | 淡入淡出（200ms） |
+| 加载动画 | 金色细线旋转器（2px 描边圆环） |
+| 特殊动效 | 无——仪式感靠静态排版，不加花哨动效 |
+
+**要点**：动效必须克制，闪烁/弹跳/弹性都破坏庄重感。
+
+---
+
 ## 参考
 
 - 来源：本项目实践
-- 类似风格：Art Deco、Victorian / Letterpress（`cumabozkurt/god-of-design`）
+- 类似风格：Art Deco、Victorian / Letterpress（[`cumabozkurt/god-of-design`](https://github.com/cumabozkurt/god-of-design)）
 
 ---
 

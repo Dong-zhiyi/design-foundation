@@ -95,10 +95,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | linear |
+| 过渡时长 | 极快（50ms）——终端无缓冲 |
+| hover 效果 | 反色（背景↔文字互换） |
+| 页面切换 | 无动画——瞬间切换 |
+| 加载动画 | 光标闪烁（`_` 或 `█` 块光标） |
+| 特殊动效 | 文字逐字符打出（typewriter），状态色即时切换 |
+
+**要点**：动效就是「无动效」——终端的本质是即时响应，不加装饰。
+
+---
+
 ## 参考
 
 - 来源：`luogao/design-atlas`、`nicohodt/claude-code-ui-ux-skill`
-- 相关：Modern Dark / Linear、Cyberpunk
+- 相关：[现代深色 / Linear](./modern-dark-linear.md)、[赛博朋克 / Y2K](./cyberpunk-y2k.md)
 
 ---
 

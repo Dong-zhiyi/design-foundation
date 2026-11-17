@@ -92,10 +92,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | linear（生硬，不用 ease） |
+| 过渡时长 | 极快（100ms）——故意粗糙 |
+| hover 效果 | 硬阴影位移（`4px 4px 0` → `2px 2px 0`），元素微移 |
+| 页面切换 | 硬切，无过渡 |
+| 加载动画 | 闪烁或像素块跳动 |
+| 特殊动效 | 可加抖动/错位（glitch），配合粗野气质 |
+
+**要点**：动效也要「粗野」——线性、生硬、无缓冲。
+
+---
+
 ## 参考
 
 - 来源：`yanliudesign/design-style-skill`、`cumabozkurt/god-of-design`
-- 相关：Bauhaus（结构感）、Memphis Design
+- 相关：[包豪斯](./bauhaus.md)（结构感）、Memphis Design
 
 ---
 

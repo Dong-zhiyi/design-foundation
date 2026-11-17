@@ -95,10 +95,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | ease（CSS 默认） |
+| 过渡时长 | 快（150ms）——工具感要求即时响应 |
+| hover 效果 | 描边变色（`#2A2A32` → `#5E6AD2`），背景微亮 |
+| 页面切换 | 无动画或极快淡入（100ms） |
+| 加载动画 | 骨架屏（灰色脉动块） |
+| 特殊动效 | 无——克制是核心，不用弹性/弹簧 |
+
+**要点**：动效服务于效率，150ms 以内完成，不用装饰性动画。
+
+---
+
 ## 参考
 
 - 来源：`ddddddps/claude-ui-style-skill`、`nicohodt/claude-code-ui-ux-skill`
-- 类似风格：Dark Tech、AI-Native UI（`luogao/design-atlas`）
+- 类似风格：Dark Tech、[AI Native UI](./ai-native-ui.md)（`luogao/design-atlas`）
 
 ---
 

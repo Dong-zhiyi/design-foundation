@@ -91,10 +91,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | ease-in-out |
+| 过渡时长 | 中（300ms）——模糊变化需要时间 |
+| hover 效果 | 模糊增强（`blur(20px)` → `blur(24px)`）+ 不透明度微增 |
+| 页面切换 | 滑动 + 淡入（300ms） |
+| 加载动画 | 脉冲光效（玻璃面呼吸式明暗变化） |
+| 特殊动效 | 背景内容可缓慢漂移（渐变位移），增强通透感 |
+
+**要点**：动效要「柔」，配合玻璃的轻盈质感；避免硬切和弹性。
+
+---
+
 ## 参考
 
 - 来源：`MKAbuMattar/uidesign`、`yanliudesign/design-style-skill`
-- 相关：Liquid Glass（iOS 26）、AI Native UI
+- 相关：Liquid Glass（iOS 26）、[AI Native UI](./ai-native-ui.md)
 
 ---
 

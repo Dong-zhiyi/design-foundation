@@ -99,10 +99,25 @@ box-shadow:
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | spring / cubic-bezier(0.34, 1.56, 0.64, 1)（弹性过冲） |
+| 过渡时长 | 慢（400ms）——黏土感需要时间「弹」 |
+| hover 效果 | 轻微缩放（1.0 → 1.03）+ 阴影增强 |
+| 页面切换 | 弹性滑入（从底部弹上来） |
+| 加载动画 | 弹跳球或黏土块变形 |
+| 特殊动效 | 3D 插画可轻微浮动（上下 4px 循环） |
+
+**要点**：动效要「弹」和「软」，配合黏土的体积感；避免线性硬切。
+
+---
+
 ## 参考
 
 - 来源：`yanliudesign/design-style-skill`、`MKAbuMattar/uidesign`
-- 相关：Neumorphism、Bento Grid
+- 相关：[柔 UI](./neumorphism.md)（同源但更立体）、[Bento Grid](./bento-grid.md)
 
 ---
 

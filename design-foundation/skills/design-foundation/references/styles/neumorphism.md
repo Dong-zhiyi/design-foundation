@@ -104,10 +104,25 @@ box-shadow: inset 6px 6px 12px #B8BEC9, inset -6px -6px 12px #FFFFFF;
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | ease |
+| 过渡时长 | 中（250ms） |
+| hover 效果 | 凸起变凹陷（阴影反转），模拟「按下」 |
+| 页面切换 | 淡入（200ms） |
+| 加载动画 | 脉冲凹陷（inset 阴影呼吸） |
+| 特殊动效 | 开关切换：滑块平滑移动 + 轨道颜色渐变 |
+
+**要点**：动效围绕「凹凸转换」展开，所有交互都要有触感反馈。
+
+---
+
 ## 参考
 
 - 来源：`MKAbuMattar/uidesign`、`yanliudesign/design-style-skill`
-- 相关：Claymorphism（更立体）、Glassmorphism（更通透）
+- 相关：[黏土拟态](./claymorphism.md)（更立体）、[玻璃拟态](./glassmorphism.md)（更通透）
 
 ---
 

@@ -93,10 +93,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | ease + glitch 抖动 |
+| 过渡时长 | 快（150ms） |
+| hover 效果 | 霓虹闪烁（`box-shadow` 脉冲）+ 轻微 glitch 位移 |
+| 页面切换 | 故障式（glitch 错位 → 正常）或扫描线扫过 |
+| 加载动画 | 数据流（字符雨）或霓虹脉冲 |
+| 特殊动效 | 标题故障效果（RGB 分离 + 位移）、扫描线循环 |
+
+**要点**：动效是风格的核心部分，但⚠️ 必须提供 `prefers-reduced-motion` 降级（关闭闪烁/故障，保留静态霓虹）。
+
+---
+
 ## 参考
 
 - 来源：`cumabozkurt/god-of-design`、`luogao/design-atlas`
-- 相关：Modern Dark、Terminal TUI、Retro OS
+- 相关：[现代深色 / Linear](./modern-dark-linear.md)、[终端 / TUI](./terminal-tui.md)、Retro OS
 
 ---
 

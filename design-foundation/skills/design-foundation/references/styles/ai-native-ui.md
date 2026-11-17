@@ -96,10 +96,25 @@
 
 ---
 
+## 动效与动画
+
+| 项目 | 规格 |
+|---|---|
+| 过渡曲线 | ease |
+| 过渡时长 | 中（200ms） |
+| hover 效果 | 轻微阴影（`0 1px 3px` → `0 2px 8px`） |
+| 页面切换 | 滑动（新消息从底部滑入） |
+| 加载动画 | 流式打字（逐字出现）+ 光标闪烁 |
+| 特殊动效 | AI 生成区呼吸光效（极轻微 opacity 脉冲），工具调用卡折叠/展开 |
+
+**要点**：动效服务于「对话流」——消息进入要自然，生成过程要有反馈，但不打断阅读。
+
+---
+
 ## 参考
 
 - 来源：`yanliudesign/design-style-skill`、`MKAbuMattar/uidesign`
-- 相关：Modern Dark / Linear、Bento Grid
+- 相关：[现代深色 / Linear](./modern-dark-linear.md)、[Bento Grid](./bento-grid.md)
 
 ---
 
