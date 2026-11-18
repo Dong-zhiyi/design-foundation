@@ -128,7 +128,59 @@
 
 ---
 
-## 六、检查清单
+## 六、语义 Token 分层原则
+
+**核心原则：原语按色相命名，语义按角色命名。** 这是色彩系统可扩展性的关键。
+
+### 三层架构
+
+```
+原语层（Primitive）     语义层（Semantic）      组件层（Component）
+─────────────────      ──────────────────      ──────────────────
+--blue-600          →  --color-accent-solid  →  Button background
+--blue-100          →  --color-bg-subtle     →  Card hover
+--gray-800          →  --color-text-primary  →  Heading color
+--gray-400          →  --color-border        →  Divider
+--red-600           →  --color-danger-solid  →  Delete button
+```
+
+### 规则
+
+| 规则 | 说明 | 反例 |
+|---|---|---|
+| **原语只定义值，不直接使用** | `--blue-600` 是值，不是用途 | ❌ 组件里直接写 `var(--blue-600)` |
+| **语义 token 指向原语** | `--color-accent-solid` → `--blue-600` | ❌ 语义 token 名叫 `--color-blue-button` |
+| **组件只引用语义 token** | Button 用 `--color-accent-solid` | ❌ Button 用 `var(--blue-600)` |
+| **一个 token 一个角色** | 分隔线 token 不借给文字用 | ❌ `--color-border` 用在 `color:` 上 |
+| **语义名不含色相或组件名** | 叫 `--color-accent-solid`，不叫 `--color-blue-button` | ❌ `--color-sidebar-gray` |
+| **品牌色叫 accent，不叫 primary** | `--color-accent-solid` + `--color-text-primary` 共存时，品牌色应叫 accent | ❌ 两者都带 primary 造成混淆 |
+
+### 深色模式下的语义重映射
+
+深色模式**不是**把原语色阶倒过来用，而是**语义 token 指向不同的原语档位**：
+
+| 语义 token | 浅色模式指向 | 深色模式指向 | 原因 |
+|---|---|---|---|
+| `--color-accent-solid` | `--blue-600` | `--blue-400` | 深色背景上需要更亮的强调色 |
+| `--color-bg-surface` | `--gray-50` | `--gray-800` | 表面色在深色模式下变深 |
+| `--color-text-primary` | `--gray-900` | `--gray-100` | 文字色反转但不用纯白 |
+| `--color-border` | `--gray-200` | `--gray-700` | 边框在深色模式下更淡 |
+
+**关键**：组件代码不关心模式切换，它始终读 `--color-accent-solid`，由主题层决定指向哪个原语。
+
+### 一个视图一个强调操作
+
+当填充色编码主要强调时，**一个视图只有一个主要操作**获得填充色，其他操作保持中性（描边或文字按钮）。
+
+- ✅ 一个页面只有一个「主要按钮」用品牌色填充
+- ✅ 多个彩色背景可以共存，前提是它们编码**不同状态或类别**（如标签色），而非竞争为主要操作
+- ❌ 同一行里两个按钮都用品牌色填充
+
+> 来源：`jakubkrehel/skills` → `better-colors` SKILL.md「Fill exactly one action per view」
+
+---
+
+## 七、检查清单
 
 - [ ] 品牌色有完整 50–900 色阶
 - [ ] 四语义色（success/warning/error/info）各有 50–900
@@ -136,3 +188,7 @@
 - [ ] 所有文字对比度 ≥4.5:1（AA）
 - [ ] 语义色在深色模式下饱和度降低 10-15%
 - [ ] 没有用纯黑（`#000`）或纯白（`#FFF`）作为主色
+- [ ] 原语 token 不直接在组件中使用
+- [ ] 语义 token 名不含色相或组件名
+- [ ] 一个视图只有一个填充色强调操作
+- [ ] 深色模式下语义 token 指向不同原语档位（非简单反转）

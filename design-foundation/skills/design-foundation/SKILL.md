@@ -296,7 +296,8 @@ MCP 没通就开画，画完发现写不进去；文件没确认就开画，画�
 - 对比度达 WCAG 2.2 AA
 - 热区达**平台 + 技术栈**标准
 - 每个交互组件都有完整状态
-- 动效时长与缓动在规范内
+- 动效时长与缓动在规范内（查 `references/foundations/motion-values.md` 的精确值表）
+- **升级触发器 12 条红线全过**（review-gate.md 中的升级触发器表）
 - 没有 AI 味
 - 命名符合 `figma-delivery/naming.md`
 - 变量绑定覆盖率 100%（所有 fill / stroke / text / 间距 / 圆角都绑变量）
@@ -384,6 +385,42 @@ MCP 已连通，检测到 2 个文件：
 
 **硬门禁（不过不许退出）**：对比度 ≥4.5:1 / 平台尺寸 / 令牌绑定 / 关键状态齐全。
 
+### 第 10.8 步：变体探索（可选）
+
+当用户对初始设计方向不确定，或想看到不同可能性时，沿**一个主轴**做 2-3 个变体。
+
+**变体轴（每次只选一个）**：
+
+| 轴 | 变化内容 | 例子 |
+|---|---|---|
+| **结构** | 分组、顺序、列数、什么折叠 | 单列 vs 双列 vs 卡片网格 |
+| **密度** | 间距尺度、信息密度 | 宽松（24/40/64）vs 紧凑（8/12/16） |
+| **强调** | 填充色位置、什么退居次要 | 主色填充按钮 vs 描边按钮 vs 文字按钮 |
+| **字体** | 字号阶梯、字重对比 | 大标题小正文 vs 均匀字阶 |
+| **语气** | 标签、文案量、正式程度 | 正式「提交申请」vs 轻松「开始吧」 |
+
+**规则**：
+
+1. **每个变体是同一 brief 的不同答案**，不是不同色调
+2. **所有变体必须通过升级触发器**（无障碍红线，见 review-gate.md）
+3. **嵌入真实页面**，用真实数据，不用 Lorem Ipsum
+4. **不标记偏好**，让用户选择
+5. 变体文件放在 `_work/variants/` 目录，交付后清理
+
+**产出**：2-3 个变体截图 + 对比表（每行一个变体，列：轴位置、适合场景、代价）
+
+**话术示例**：
+```
+我做了 3 个方向：
+1. **宽松版** — 间距大、留白多，适合内容型产品
+2. **紧凑版** — 信息密度高，适合工具型产品
+3. **平衡版** — 折中方案
+
+你更倾向哪个？或者想沿某个方向再细化？
+```
+
+> 来源：`jakubkrehel/skills` → `variant` SKILL.md（变体探索机制）
+
 ### 第 11 步：走查修正
 
 用第 10 步存的 baseline，对每个页面 `design_diff`（返回 per-node、per-property 变化），**精确定位偏差**，回到第 10 步修。
@@ -403,13 +440,15 @@ MCP 已连通，检测到 2 个文件：
 | `references/styles/` | 第 4 步；用户问「什么风格」时 |
 | `references/architectures/` | 第 5 步；用户问「设计系统怎么组织」时 |
 | `references/libraries/` | 第 6 步；用户问字体/图标选型时 |
-| `references/quality/` | 第 8 步；评审或自查时 |
+| `references/quality/` | 第 8 步；评审或自查时（含升级触发器红线） |
+| `references/foundations/motion-values.md` | 第 8 步 + 第 10 步；动效精确数值 + 16 风格速查 |
 | `references/figma-delivery/` | 第 10 步；动手画 Figma 之前 |
 | `references/figma-delivery/reference-extraction.md` | 第 4.5 步；选完风格后，从参考提取数值 |
 | `references/figma-delivery/reuse-first.md` | 第 10 步；动手前先盘点现有组件 |
 | `references/figma-delivery/component-catalog.md` | 第 10 步；动手前先查通用组件目录 |
 | `references/figma-delivery/variants-states.md` | 第 10 步；建交互组件时 |
 | `references/figma-delivery/verification-loop.md` | 第 10.5 步；生成后截图自检 |
+| `references/foundations/motion-values.md` | 第 8 步自检 + 第 10 步落地；动效精确数值参考 |
 | `references/examples/` | 第一次走全流程，或卡在某个环节时 |
 | `references/requirements/` | 第 3、7 步 |
 | `references/01-sources.md` | 需要追溯数据来源时 |
