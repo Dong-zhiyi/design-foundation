@@ -174,6 +174,44 @@ Iconify 的 Figma 插件能浏览/搜索几十个开源库（含本清单全部 
 
 ---
 
+## 风格 × 图标库匹配矩阵
+
+**选风格后直接查表。** 每种风格推荐 1-2 个图标库 + 粗细/尺寸规则。
+
+| 风格 | 推荐图标库 | 粗细 | 尺寸 | 说明 |
+|---|---|---|---|---|
+| 经典剧院 | Phosphor (Regular) | 1.8px | 24px | 优雅线性，配合宋体标题 |
+| 现代深色 | Lucide / Phosphor (Thin) | 1.5px | 20px | 极简线性，克制精确 |
+| 简约浅色 | Lucide / Tabler | 1.5–2px | 20–24px | 几何感强，理性清晰 |
+| 玻璃拟态 | Lucide (Thin) | 1.5px | 24px | 细线配合通透质感 |
+| 新粗野主义 | Phosphor (Bold) / Tabler | 2–3px | 24–32px | 粗描边，配合硬阴影 |
+| 黏土拟态 | Phosphor (Fill) | 面性 filled | 24–32px | 圆润面性，配合 3D 感 |
+| 柔 UI | Phosphor (Regular) | 1.5px | 24px | 细线配合柔和凹凸 |
+| Bento Grid | Phosphor (Fill) / Lucide | 面性或 2px | 24–40px | 可大至 40px 作视觉焦点 |
+| 编辑杂志 | Lucide (Thin) | 1.5px | 20–24px | 细线配合衬线字体 |
+| 终端 TUI | 无图标（用字符） | — | 16px 等宽 | ASCII 字符界面 |
+| 赛博朋克 | Phosphor (Bold) / 像素图标 | 2px 或像素 | 24px | 可加霓虹发光效果 |
+| 日系极简 | Lucide (Thin) / 自绘 | 1–1.5px | 20–24px | 极细线性，克制 |
+| 斯堪的纳维亚 | Phosphor (Regular) | 1.8px | 24px | 圆润线性，温暖 |
+| 包豪斯 | 自绘几何（○□△） | 2–4px | 24–32px | 纯几何构成 |
+| 国风宋墨 | 自绘水墨 / Phosphor (Thin) | 1.5px 或笔触 | 24px | 线性或水墨风 |
+| AI Native UI | Lucide / Phosphor (Regular) | 1.5–2px | 20–24px | 简洁线性，友好 |
+
+**尺寸规则**：
+
+| 场景 | 尺寸 | 线宽 |
+|---|---|---|
+| 导航栏图标 | 24px | 1.8–2px |
+| 列表项图标 | 20px | 1.8px |
+| 内联图标（跟文字） | 16px | 1.5px |
+| 密集表格 | 16px | 1.5px |
+| 功能入口（金刚区） | 24–32px | 1.8–2px |
+| TabBar 图标 | 24–28px | 1.8–2px |
+| 空状态插画 | 120–160px | 按风格 |
+| Dashboard 指标图标 | 32–48px | 2px |
+
+---
+
 ## 检查清单
 
 - [ ] 全站只用**一个**图标库
@@ -184,3 +222,4 @@ Iconify 的 Figma 插件能浏览/搜索几十个开源库（含本清单全部 
 - [ ] Figma 里有对应组件（不是每次贴 SVG）
 - [ ] 颜色用 currentColor
 - [ ] 命名规范（`Icon/<名称>`）
+- [ ] 图标风格与整体风格匹配（查上方矩阵）
