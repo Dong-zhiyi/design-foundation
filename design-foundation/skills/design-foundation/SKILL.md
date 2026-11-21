@@ -276,6 +276,7 @@ MCP 没通就开画，画完发现写不进去；文件没确认就开画，画�
 > ⚠️ **小程序 / uni-app / Taro 项目**：图标通常以 iconfont 引入，**优先选 iconfont ✅ 的 5 个**（Tabler、Phosphor、Bootstrap Icons、Remix Icon、Fluent）。❌ 的库只有 SVG/组件，小程序里要自己转格式。
 > ⭐ **Figma 插件**：✅ 官方 4 个（Lucide、Tabler、Phosphor、Remix Icon）；⚠️ 社区 4 个（Bootstrap Icons、IconPark、Iconoir、Radix）；❌ 3 个（Heroicons、Octicons、Fluent）——没有官方插件的可在 Iconify 插件里搜，或手动导入 SVG。
 > ⚠️ **列图标库时必须把官方网址展示给用户，或直接打开**——**在官网搜一遍你要用的所有图标**（ticket / seat / stage…），不要只看首页推荐。
+> ⭐ **图标预览页（首选）**：插件配置项 `icon_preview_url`（独立单文件静态项目，部署后填地址）——一页跨库对比 11 个图标库（35 组常用图标已核实命名）+ 中文关键词搜索 + 尺寸/颜色切换 + 复制 SVG（自动归一 IconPark 品牌蓝为 currentColor）。**选图标时让用户在这里对比形状，不要凭名字猜。** 预览页没部署时，走下面的临时 HTML 流程。
 > 🔍 **跨库图标搜索（标准流程）**：选定库名词后，用 Iconify API 把 11 个库里的候选图标**全部列出、看到形状再选**——搜索 → 下载 SVG → 生成 HTML 预览页 → 截图给用户选 → 落地。读 `references/libraries/icon-search.md`。
 > 📋 详细对比见 `references/libraries/icons.md`（含「按字体图标支持分组」「Figma 落地」）。
 > 🗑️ **已移除**：Hugeicons（60,000+ 为付费 Pro）、Iconify（聚合含非商用集，许可不可控）——本清单只保留**完全免费可商用**的库。
