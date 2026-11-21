@@ -1,7 +1,7 @@
 {
   "name": "design-foundation",
   "version": "0.4.8",
-  "description": "产品设计基座工作流：先定平台与技术栈，再选风格、架构、字体库与图标库，产出设计规范简报并过质量门禁，验证 Figma MCP 连通性后落地设计稿；落地后走截图自检闭环（独立裁判打分 → 修 → 再截）。自带 figwright-mcp 与 framelink-mcp 两个 Figma MCP。",
+  "description": "产品设计基座工作流：先定平台与技术栈，再选风格、架构与字体库（图标不预选库，落地时跨库双语搜索、用户编号确认），讨论清楚需求并过质量门禁（升级触发器红线），验证 Figma MCP 连通性后落地设计稿；落地后走截图自检闭环（独立裁判打分 → 修 → 再截）。自带 figwright-mcp 与 framelink-mcp 两个 Figma MCP。",
   "author": { "name": "zcode-design-foundation contributors" },
   "skills": "./skills",
   "mcpServers": {
