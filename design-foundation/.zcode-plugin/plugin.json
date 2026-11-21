@@ -1,6 +1,6 @@
 {
   "name": "design-foundation",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "产品设计基座工作流：先定平台与技术栈，再选风格、架构、字体库与图标库，产出设计规范简报并过质量门禁，验证 Figma MCP 连通性后落地设计稿；落地后走截图自检闭环（独立裁判打分 → 修 → 再截）。自带 figwright-mcp 与 framelink-mcp 两个 Figma MCP。",
   "author": { "name": "zcode-design-foundation contributors" },
   "skills": "./skills",
@@ -27,14 +27,14 @@
     "font_preview_url": {
       "type": "string",
       "title": "字体样张页地址",
-      "description": "字体样张页部署后的访问地址，用于让用户在浏览器里看 13 个候选字体的真实效果。\n示例：https://your-domain.com/zcode-design-foundation-font-preview/\n\n样张页是一个独立的静态项目（index.html + fonts/ 放在同一目录），上传到任意静态服务器即可，详见项目里的 zcode-design-foundation-font-preview/README.md。\n留空则不展示样张入口。",
-      "default": "https://your-domain.com/zcode-design-foundation-font-preview/"
+      "description": "字体样张页部署后的访问地址，用于让用户在浏览器里看 13 个候选字体的真实效果。\n默认为官方 GitHub Pages 地址；若你自部署了私有副本，可覆盖为你的地址。\n样张页是一个独立的静态项目（index.html + fonts/ 放在同一目录），详见项目里的 zcode-design-foundation-font-preview/README.md。\n留空则不展示样张入口。",
+      "default": "https://dong-zhiyi.github.io/zcode-design-foundation-font-preview/"
     },
     "icon_preview_url": {
       "type": "string",
       "title": "图标预览页地址",
-      "description": "图标预览页部署后的访问地址，用于让用户跨库对比 11 个推荐图标库的图标形状、搜索候选图标并复制 SVG。\n示例：https://your-domain.com/zcode-design-foundation-icon-preview/\n\n预览页是一个独立的单文件静态项目（只有 index.html），上传到任意静态服务器即可，详见项目里的 zcode-design-foundation-icon-preview/README.md。\n留空则走 references/libraries/icon-search.md 的临时 HTML 预览流程。",
-      "default": "https://your-domain.com/zcode-design-foundation-icon-preview/"
+      "description": "图标预览页地址，用于让用户跨库对比 11 个推荐图标库的图标形状、搜索候选图标并复制 SVG。\n默认为官方 GitHub Pages 地址；若你自部署了私有副本，可覆盖为你的地址。\n预览页是一个独立的单文件静态项目（只有 index.html），详见项目里的 zcode-design-foundation-icon-preview/README.md。\n留空则走 references/libraries/icon-search.md 的临时 HTML 预览流程。",
+      "default": "https://dong-zhiyi.github.io/zcode-design-foundation-icon-preview/"
     }
   }
 }

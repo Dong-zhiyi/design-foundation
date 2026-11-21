@@ -91,13 +91,27 @@ sleep 0.5
 
 同库多权重（如 Phosphor）把 2–3 个代表性权重（light/bold/fill）一起下载，方便对比。
 
-### 第 3 步：HTML 预览（主预览方式）
+### 第 3 步：在线预览页（每次选图标的默认方式）
 
-**首选：插件配置的图标预览页（`icon_preview_url`）**
+**官方地址**：`https://dong-zhiyi.github.io/zcode-design-foundation-icon-preview/`（配置项 `icon_preview_url` 可覆盖为自部署副本）
 
-插件有一个配套的独立静态项目（图标预览页，单文件 index.html）：内置 35 组常用图标 × 11 库的跨库对比（构建期已核实命名）、中文关键词搜索（内置 70+ 中文词映射）、尺寸/颜色切换、点击卡片看多尺寸大图 + 复制 SVG。**已部署的话直接把地址给用户打开对比**，跳过下面临时页的生成步骤。
+用 **browser-use（内置浏览器）打开预览页，由用户在页面里选择**：
 
-**备用：临时生成 HTML 预览页**（预览页没部署、或搜索的图标超出预置范围时）
+1. 打开预览页（已开着则复用标签页，不要重复开新页）
+2. 在页面搜索关键词（中文英文都行：票 / ticket / 会员…），或直接用预置的 35 组跨库对比（SVG 已内嵌，零网络秒开）
+3. **搜索结果卡片带 `#N` 编号**——用户回复「用 N 号」即可，也可点卡片看多尺寸大图核实形状
+4. ZCode 读取编号映射拿到确切图标名：
+
+```js
+// browser-use 在预览页执行：
+[...document.querySelectorAll("#searchGrid .card[data-num]")]
+  .map(c => `#${c.dataset.num} = ${c.dataset.prefix}/${c.dataset.name}`)
+// → ["#1 = tabler/ticket", "#2 = ri/ticket-line", ...]
+```
+
+5. 搜索是远程请求（有 localStorage 跨会话缓存 + 弱网自愈：4 路并发 + 三域名轮换 + 熔断自动恢复）；搜索失败时改用第 2 步的逐库点名法，或给用户临时页
+
+**备用：临时生成 HTML 预览页**（预览页打不开时的兜底）
 
 把下载的 SVG **内嵌**进一个临时 HTML 网格页，写到项目 `_work/icon-preview.html`：
 
@@ -153,25 +167,26 @@ icons.forEach(i => {
 - 点击卡片切换选中态，`console.log` 记录选中项（browser-use 可读取）
 - 文件放项目 `_work/`（临时产物，任务结束可清理）
 
-### 第 4 步：给用户看 + 模型自查
+### 第 4 步：用户选定 + 模型自查
 
-**给用户**：优先给图标预览页地址（`icon_preview_url`，用户可直接搜索/对比/复制 SVG）。没有部署预览页时，给出 `_work/icon-preview.html` 的本地路径让用户双击打开点选。也可以顺手给 Iconify 官网搜索链接做参考：`https://icon-sets.iconify.design/`（用户自己搜着对比）。
+**用户选定**：预览页在浏览器里开着，用户直接回复「用 N 号」。编号 → 图标名的映射用第 3 步第 4 条的 DOM 读取拿到。用户没说话只点了卡片时，读取页面详情弹层标题（`#N · prefix:name`）或问用户。
 
-**模型自查**（必做）：
+**模型自查**（必做——图标形状是否匹配风格是视觉判断，光看名字猜不准）：
 
-1. 项目根目录起服务：`python -m http.server 8901`（后台）
-2. browser-use 打开 `http://localhost:8901/_work/icon-preview.html`，截图
-3. 模型看截图，对每个候选做「风格 × 权重」匹配判断（对照 `icons.md` 匹配矩阵），在对话里给出推荐排序
+1. 预览页路径：browser-use 已开着 → 对当前视口截图，模型亲自看候选形状
+2. 临时页路径：项目根目录起服务 `python -m http.server 8901`（后台）→ browser-use 打开 `http://localhost:8901/_work/icon-preview.html` → 截图
+3. 对每个候选做「风格 × 权重」匹配判断（对照 `icons.md` 匹配矩阵），在对话里给出推荐排序
 
-> 为什么模型必须看：图标形状是否与 16 种风格匹配（线宽、圆角、填充密度）是视觉判断，光看名字猜不准。
+也可以顺手给用户 Iconify 官网搜索链接做参考：`https://icon-sets.iconify.design/`。
 
 ### 第 5 步：选定 → 落地
 
-1. 用户回复选中项（或从 browser-use 读取 console 里的 selected 列表）
-2. `import_svg` 把选中的 SVG 画进目标 Figma 位置（画 32px 或页面所需尺寸）
-3. `set_fills` 上色并**绑定语义色变量**（token 绑定率要求 100%）
-4. 权重/风格按 `icons.md` 匹配矩阵统一（例如整体是 Phosphor Light，候选里选 ph/ticket-light）
-5. 清理 `_work/icon-preview.html` 和下载的临时 SVG（用户确认选完再清）
+1. 用户回复编号（或从页面 DOM 读映射），拿到确定的 `prefix/name`
+2. SVG 获取：预置图标直接用页面内嵌的 SVG（详情弹层「复制 SVG」或读 `INLINE_SVG`）；非预置的从 Iconify API 下载
+3. `import_svg` 把 SVG 画进目标 Figma 位置（32px 或页面所需尺寸）
+4. `set_fills` 上色并**绑定语义色变量**（token 绑定率要求 100%）
+5. 权重/风格按 `icons.md` 匹配矩阵统一（例如整体是 Phosphor Light，候选里选 ph/ticket-light）
+6. 清理临时文件（`_work/` 下的临时 SVG/HTML，用户确认选完再清）
 
 ---
 
