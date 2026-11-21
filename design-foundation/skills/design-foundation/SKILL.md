@@ -78,7 +78,7 @@ MCP 没通就开画，画完发现写不进去；文件没确认就开画，画�
 | **风格** | 平台适配性（如强风格不适合后台）、产品类型 |
 | **架构** | 项目规模、团队人数 |
 | **字体** | 平台限制（小程序只能用系统字体）、技术栈 |
-| **图标** | 技术栈（小程序要切图，Web/App 可用 SVG） |
+| **图标** | 不预选库；落地时跨库搜索由用户选定，技术栈约束（小程序 iconfont）落地时提示 |
 | **UI 库** | **技术栈**（最强约束，定了框架才能选库） |
 
 > 💡 **UI 库是最强的过滤器**：定了技术栈，可选的 UI 库就那么几个。见 `references/tech-stacks/_index.md` 的适配矩阵。
@@ -211,9 +211,9 @@ MCP 没通就开画，画完发现写不进去；文件没确认就开画，画�
 
 **说明**：1 是地基，2/3/4 是上层选择，可以叠加。
 
-### 第 6 步：选字体与图标库
+### 第 6 步：选字体库（图标不预选，使用时搜索）
 
-读 `references/libraries/fonts.md` 和 `icons.md`，**把候选项列出来让用户选**（可按场景分组，但必须列全）。
+读 `references/libraries/fonts.md`，**把候选项列出来让用户选**（可按场景分组，但必须列全）。
 
 **字体（13 个选项，含「默认」）——全部可商用**：
 
@@ -239,11 +239,8 @@ MCP 没通就开画，画完发现写不进去；文件没确认就开画，画�
 > 📋 **许可证细节**见 `references/libraries/fonts.md` 的「许可证与商用」
 
 **⭐ 字体样张工具（首选）**：
-样张页是一个**独立的静态项目**，不在插件里，需要用户自己部署到服务器：
-- 项目位置：字体样张项目是一个**独立的静态项目**（不在本插件仓库内），包含 `index.html` + `fonts/` 同目录（共约 62MB）
-- 部署：整个目录上传到任意静态服务器，`index.html` 与 `fonts/` 必须同级（页面用相对路径 `./fonts/...` 加载字体）
-- 插件配置项 `font_preview_url` 填部署后的地址（示例值 `https://your-domain.com/zcode-design-foundation-font-preview/`）
-- 让用户看样张时，直接打开该地址即可；地址是示例值或打不开时，提示用户改成自己的
+样张页是**独立的静态项目**，官方部署地址 `https://dong-zhiyi.github.io/zcode-design-foundation-font-preview/`（配置项 `font_preview_url` 可覆盖为自部署副本）。
+本地源码不在本插件仓库内（含 `index.html` + `fonts/` 共约 62MB）。
 
 页面能力：13 个字体渲染真实文案（可自己输入）、快速对比网格、详细样张（字重/字号/中英文/数字）。
 8 个拉丁字体走 CDN（`font.onmicrosoft.cn`），中文字体用项目里随附的 `fonts/`。
@@ -257,31 +254,19 @@ MCP 没通就开画，画完发现写不进去；文件没确认就开画，画�
 > 备选（样张页打不开时）：**Anyway.Fonts**（anyway.fm/fonts，中文预览+对比）、**字由**（hellofont.cn）、**字体天下**（fonts.net.cn）。
 > 选型时**输入你的真实文案**（如「歌剧《图兰朵》」）预览，比看字样图准确。
 
-**图标（11 个主要库，全部免费可商用）**——**每项标注 iconfont 支持 + Figma 插件 + 官方网址**：
+**图标：不预选库，使用时跨库搜索选定**（v0.4.7 起）
 
-| # | 图标库 | 风格 / 数量 / 许可 | iconfont | Figma 插件 | 官方网址 |
-|---|---|---|---|---|---|
-| 1 | Lucide | 线性现代，1500+（ISC） | ❌ 只有 SVG/组件 | ✅ 官方 | https://lucide.dev |
-| 2 | Tabler | 2px 统一，5900+（MIT） | ✅ `@tabler/icons-webfont` | ✅ 官方 | https://tabler.io/icons |
-| 3 | Phosphor | 6 种权重，9000+（MIT） | ✅ `@phosphor-icons/web` | ✅ 官方 | https://phosphoricons.com |
-| 4 | Heroicons | 极简，300+（MIT） | ❌ 只有 SVG/组件 | ❌ | https://heroicons.com |
-| 5 | Bootstrap Icons | 16px 栅格，2000+（MIT） | ✅ `font/bootstrap-icons.min.css` | ⚠️ 社区 | https://icons.getbootstrap.com |
-| 6 | Remix Icon | 中文友好，2800+（Apache-2.0） | ✅ `remixicon/fonts/remixicon.css` | ✅ 官方 | https://remixicon.com |
-| 7 | IconPark | 字节，2000+（Apache-2.0） | ❌ 只有 SVG/组件 | ⚠️ 社区 | https://iconpark.oceanengine.com |
-| 8 | Octicons | GitHub 风格，200+（MIT） | ❌ 官方已移除 | ❌ | https://primer.style/foundations/icons |
-| 9 | Fluent System Icons | 微软，2000+（MIT） | ✅ 有官方字体实现 | ❌ | https://learn.microsoft.com/design/fluent-2/iconography/ |
-| 10 | Iconoir | 线性轻量，1600+（MIT） | ❌ 只有 SVG/组件 | ⚠️ 社区 | https://iconoir.com |
-| 11 | Radix Icons | 15px 栅格，300+（MIT） | ❌ 只有 SVG/组件 | ⚠️ 社区 | https://www.radix-ui.com/icons |
+图标**不再是第 6 步的选型项**。每次需要图标时，走「**搜索 → 确认 → 落地**」：
 
-> ⚠️ **小程序 / uni-app / Taro 项目**：图标通常以 iconfont 引入，**优先选 iconfont ✅ 的 5 个**（Tabler、Phosphor、Bootstrap Icons、Remix Icon、Fluent）。❌ 的库只有 SVG/组件，小程序里要自己转格式。
-> ⭐ **Figma 插件**：✅ 官方 4 个（Lucide、Tabler、Phosphor、Remix Icon）；⚠️ 社区 4 个（Bootstrap Icons、IconPark、Iconoir、Radix）；❌ 3 个（Heroicons、Octicons、Fluent）——没有官方插件的可在 Iconify 插件里搜，或手动导入 SVG。
-> ⚠️ **列图标库时必须把官方网址展示给用户，或直接打开**——**在官网搜一遍你要用的所有图标**（ticket / seat / stage…），不要只看首页推荐。
-> ⭐ **图标预览页（选图标配图，每次选图标必走）**：官方地址 `https://dong-zhiyi.github.io/zcode-design-foundation-icon-preview/`（配置项 `icon_preview_url` 可覆盖）——一页跨库对比 11 个图标库（35 组常用图标已核实命名、SVG 内嵌零网络）+ 中文关键词搜索 + 结果带 `#N` 编号。**流程：用内置浏览器打开预览页 → 搜关键词 → 用户回复「用 N 号」→ 读页面编号映射拿到图标名 → 再落地。不要凭名字猜图标。** 预览页打不开时，才走下面的临时 HTML 流程。
-> 🔍 **跨库图标搜索（标准流程）**：选定库名词后，用 Iconify API 把 11 个库里的候选图标**全部列出、看到形状再选**——搜索 → 下载 SVG → 生成 HTML 预览页 → 截图给用户选 → 落地。读 `references/libraries/icon-search.md`。
-> 📋 详细对比见 `references/libraries/icons.md`（含「按字体图标支持分组」「Figma 落地」）。
-> 🗑️ **已移除**：Hugeicons（60,000+ 为付费 Pro）、Iconify（聚合含非商用集，许可不可控）——本清单只保留**完全免费可商用**的库。
+1. **用内置浏览器打开图标预览页**：官方地址 `https://dong-zhiyi.github.io/zcode-design-foundation-icon-preview/`（配置项 `icon_preview_url` 可覆盖；已开着则复用标签页）
+2. **中英双语搜索**：输入中文（票 / 会员 / 优惠券…，内置 70+ 词映射）、英文（ticket / crown…）或混合——从**全部 11 个图标库**中搜候选（35 组常用图标已预置在页面里，SVG 内嵌零网络，可直接对比）
+3. **用户确认选择**：结果卡片带 `#N` 编号，用户回复「**用 N 号**」（可点卡片看多尺寸大图核实形状）
+4. ZCode 读页面编号映射拿到确切图标名 → `import_svg` 落地 + 绑语义色
 
-**优先确认**：**能否以 iconfont 引入项目** / 中文支持 / Figma 可用性 / 许可证 / 与项目 UI 库匹配。
+> 📋 **标准流程细节**（编号映射读取、临时页兜底、逐库点名法）见 `references/libraries/icon-search.md`。
+> 📋 **11 个库的能力对比**（风格适配 / iconfont 支持 / Figma 插件 / 许可证）见 `references/libraries/icons.md`——**落地前按需查，不再要求预先选定**。
+> ⚠️ **小程序 / uni-app / Taro 项目**：图标以 iconfont 引入时，落地阶段**优先提示用户**选 iconfont ✅ 的库（Tabler、Phosphor、Bootstrap Icons、Remix Icon、Fluent），❌ 的库只有 SVG/组件，要自己转格式。
+> 🗑️ 已移除：Hugeicons（60,000+ 为付费 Pro）、Iconify（聚合含非商用集，许可不可控）。
 
 ### 第 7 步：产出《设计规范简报》
 
@@ -353,7 +338,7 @@ MCP 已连通，检测到 2 个文件：
 
 用 Figma MCP（`figwright-mcp`）按 `references/figma-delivery/` 的规范建页面。
 
-**⚠️ 图标落地前置条件**：页面里每个图标落地前，用户必须已通过预览页选定（编号或图标名）。没走过的先回第 6 步的预览页流程——打开内置浏览器搜索，让用户选，拿到确定的 `prefix/name` 再 `import_svg`。
+**⚠️ 图标落地前置条件**：页面里每个图标落地前，用户必须已通过预览页选定（编号或图标名）。没走过的先走预览页流程——用内置浏览器打开预览页搜索（中英双语，跨全部 11 库），让用户选，拿到确定的 `prefix/name` 再 `import_svg`。
 
 **先盘点，再动手**（读 `references/figma-delivery/reuse-first.md`）：
 
@@ -443,8 +428,8 @@ MCP 已连通，检测到 2 个文件：
 | `references/tech-stacks/` | 第 2 步；用户问技术栈、单位、框架时 ★ |
 | `references/styles/` | 第 4 步；用户问「什么风格」时 |
 | `references/architectures/` | 第 5 步；用户问「设计系统怎么组织」时 |
-| `references/libraries/` | 第 6 步；用户问字体/图标选型时 |
-| `references/libraries/icon-search.md` | 第 6 步选图标 + 第 10 步落地图标时；跨库搜索 + HTML 预览工作流 |
+| `references/libraries/` | 第 6 步；字体选型；图标库知识（iconfont/许可）随时查 |
+| `references/libraries/icon-search.md` | **每次落地图标时**；跨库双语搜索 + 预览页编号选型工作流 |
 | `references/quality/` | 第 8 步；评审或自查时（含升级触发器红线） |
 | `references/foundations/motion-values.md` | 第 8 步 + 第 10 步；动效精确数值 + 16 风格速查 |
 | `references/figma-delivery/` | 第 10 步；动手画 Figma 之前 |
